@@ -13,9 +13,6 @@ stages:
 - stage: PreProd
   dependsOn: Dev
   condition: succeeded()
-  approval:
-    approvals:
-      - reviewers: [ "team-lead" ]
   jobs:
     - job: Terraform_PreProd
       steps:
@@ -24,9 +21,6 @@ stages:
 - stage: Prod
   dependsOn: PreProd
   condition: succeeded()
-  approval:
-    approvals:
-      - reviewers: [ "cto" ]
   jobs:
     - job: Terraform_Prod
       steps:
