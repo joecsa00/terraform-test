@@ -8,7 +8,7 @@ stages:
   jobs:
     - job: Terraform_Dev
       steps:
-        - script: terraform apply ...
+        - script: ls -ltr
 
 - stage: PreProd
   dependsOn: Dev
@@ -16,7 +16,7 @@ stages:
   jobs:
     - job: Terraform_PreProd
       steps:
-        - script: terraform apply ...
+        - script: ls -ltr
 
 - stage: Prod
   dependsOn: PreProd
@@ -24,4 +24,4 @@ stages:
   jobs:
     - job: Terraform_Prod
       steps:
-        - script: terraform apply ...
+        - script: ls -ltr
